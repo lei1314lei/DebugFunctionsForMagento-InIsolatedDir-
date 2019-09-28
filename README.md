@@ -10,7 +10,7 @@
 
 
 
-使用方法：  
+安装方法：  
 
 1：如果你只对“使用时替换”感兴趣，希望调试代码完全自主开发  
       1.1： 找到项目根目录下的.htaccess，将下面的配置追加到  RewriteRule .* index.php [L] 之后, 追加完的效果如下   
@@ -26,8 +26,32 @@
              /MartinDebug  
                   /app  
                       Mage.php  
-                      
-             
-
 
 2：如果你对本项目的调试功能感兴趣，完成步骤“1.1”之后，在您的项目根目录下创建“MartinDebug”，然后将本项目直接拷贝到“MartinDebug”下即可
+
+
+使用方法：
+
+
+自定义debug功能的开发方法：    
+copy您希望改动的Magento类文件，按照同样的相对路径，将其放入“/MartinDeubg/Magento/”目录下  
+
+
+如果你希望使用本项目的调试功能，您还需要映射命名空间“Martindebug”，建议您使用composer的自动加载来设置，操作如下： 
+    编辑您的composer.json文件，增加Martindebug的映射   
+    {  
+      ....  
+      "autoload": {  
+          "psr-4": {  
+            "Martindebug\\": ["MartinDebug","app/code/local/Martin/Debug/Namespace"]  
+          }  
+      }  
+    }  
+
+
+
+
+
+
+@todo  
+将项目打包到Composer  
