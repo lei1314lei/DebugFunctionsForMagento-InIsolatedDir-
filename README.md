@@ -1,6 +1,9 @@
 # DebugFunctionsForMagento-InIsolatedDir-
 
 1：轻松开启调试模式  
+      在url结尾增加debug  
+         example.com/catalog/prodcut/view/id/1?debug  
+         example.com/?debug  
 
 2：用一种更加友好的方式添加调试代码（复制，然后直接编辑），且使用运行时替换的原则，从而不用担心将‘坏’的调试代码引入项目导致项目难以维护  
 
